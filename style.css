@@ -1,0 +1,32 @@
+* {
+	text-align: center;
+}
+
+.navbar a {
+	font-size: 25px;
+	color: black;
+}
+
+.whitetext{
+	color: white;
+}
+
+a {
+	color: white;
+}
+
+a:active {
+	color: yellow;
+}
+
+a:hover {
+	color: yellow;
+}
+
+.fa-facebook {
+  color: #4267B2;
+}
+
+.fa-twitter {
+  color: #1DA1F2;
+}
