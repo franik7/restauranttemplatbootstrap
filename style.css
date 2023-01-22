@@ -1,5 +1,8 @@
 * {
 	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+
+
 }
 
 .navbar a {
@@ -7,7 +10,7 @@
 	color: black;
 }
 
-.whitetext{
+.whitetext {
 	color: white;
 }
 
@@ -24,9 +27,63 @@ a:hover {
 }
 
 .fa-facebook {
-  color: #4267B2;
+	color: #dc3545;
+	justify-content: justify-content-end;
 }
 
 .fa-twitter {
-  color: #1DA1F2;
+	color: #dc3545;
+	justify-content: justify-content-end;
+}
+
+.fa-twitter:hover {
+	color: #ffc107;
+}
+
+.fa-facebook:hover {
+	color: #ffc107;
+}
+
+#fontawesome {
+	padding: 5px;
+}
+
+
+.HoverDiv {
+	/*			position: relative;*/
+	/*			overflow: hidden;*/
+}
+
+.HoverDiv img {
+	max-width: 100%;
+	/*			text-align: center;*/
+	/*
+			-moz-transition: all 1s;
+			-webkit-transition: all 1s;
+			transition: all 1s;
+*/
+}
+
+.HoverDiv:hover img {
+	-moz-transform: scale(1.02);
+	-webkit-transform: scale(1.02);
+	transform: scale(1.02);
+}
+
+img {
+	/*			display: inline-block;*/
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 5px;
+	transition: 1s;
+	/*
+			position: relative;
+			z-index: 1;
+*/
+}
+
+img:hover {
+	-webkit-transform-origin: 0 0;
+	-ms-transform-origin: 0 0;
+	transform-origin: 0 0;
 }
