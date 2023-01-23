@@ -46,14 +46,14 @@ i:hover {
 
 .HoverDiv img {
 	cursor: auto;
-	border-radius: 30px;
-	border: 20px solid white;
+	border-radius: 20px;
+	border: 10px solid white;
 }
 
 .HoverDiv img:hover {
 	transform: scale(1.03);
 	transition: transform 1s ease;
-	border-radius: 30px;
+	border-radius: 20px;
 
 }
 
