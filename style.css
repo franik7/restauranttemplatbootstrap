@@ -1,14 +1,18 @@
 * {
 	text-align: center;
 	font-family: 'Open Sans', sans-serif;
-
-
 }
 
-.navbar a {
-	font-size: 25px;
-	color: black;
+body {
+	max-width: 1200px;
+	margin: auto;
 }
+
+html {
+	scroll-behavior: smooth;
+	background-color: #F0F2EF;
+}
+
 
 .whitetext {
 	color: white;
@@ -19,71 +23,79 @@ a {
 }
 
 a:active {
-	color: yellow;
+	color: #ffc107;
 }
 
 a:hover {
-	color: yellow;
-}
-
-.fa-facebook {
-	color: #dc3545;
-	justify-content: justify-content-end;
-}
-
-.fa-twitter {
-	color: #dc3545;
-	justify-content: justify-content-end;
-}
-
-.fa-twitter:hover {
 	color: #ffc107;
 }
 
-.fa-facebook:hover {
-	color: #ffc107;
-}
-
-#fontawesome {
+i {
+	color: #dc3545;
+	opacity: 50%;
 	padding: 5px;
 }
 
+i:hover {
+	color: #ffc107;
+	opacity: 100%;
+	transform: scale(1.5);
 
-.HoverDiv {
-	/*			position: relative;*/
-	/*			overflow: hidden;*/
 }
+
 
 .HoverDiv img {
-	max-width: 100%;
-	/*			text-align: center;*/
-	/*
-			-moz-transition: all 1s;
-			-webkit-transition: all 1s;
-			transition: all 1s;
-*/
+	cursor: auto;
+	border-radius: 30px;
+	border: 20px solid white;
 }
 
-.HoverDiv:hover img {
-	-moz-transform: scale(1.02);
-	-webkit-transform: scale(1.02);
-	transform: scale(1.02);
+.HoverDiv img:hover {
+	transform: scale(1.03);
+	transition: transform 1s ease;
+	border-radius: 30px;
+
 }
 
-img {
-	/*			display: inline-block;*/
-	border: 1px solid #ddd;
-	border-radius: 4px;
-	padding: 5px;
-	transition: 1s;
-	/*
-			position: relative;
-			z-index: 1;
-*/
+.fluid-container {
+	background-color: #F0F2EF;
 }
 
-img:hover {
-	-webkit-transform-origin: 0 0;
-	-ms-transform-origin: 0 0;
-	transform-origin: 0 0;
+.bgcolor {
+	background-color: #F0F2EF;
 }
+
+.row {
+	margin: auto;
+}
+
+p {
+	font-size: 25px;
+}
+
+.navbar a {
+	font-size: 28px;
+	color: black;
+}
+
+.navbar-nav a:hover {
+	background-color: #ffc107;
+	transform: scale(1.1);
+	border-radius: 30%;
+	transform: scale(1.03);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
