@@ -32,8 +32,12 @@ function run() {
   const name = document.querySelector('#name').value
   const email = document.querySelector('#email').value
 
- alert('Dear ${name}, thank you for providing your email address ${email}, your 10% discount coupon is xxx`);
+  document.alert = `Dear ${name}, thank you for providing your email address ${email}, your 10% discount coupon is xxx`;
+
+
 }
+
+
 
 	</script>
 
@@ -272,17 +276,14 @@ function run() {
 				<form>
 					<label>
 						Name<br>
-						<input type="text" name="nm" id = "name" placeholder="Bob Garcia" required style=" min-width:300px; max-width:100%;height:100%;width:100%;">
+						<input type="text" name="nm" id = "name" placeholder="Bob Garcia" required style=" min-width:250px; max-width:100%;height:100%;width:100%;">
 					</label>
 					<br>
 					<label>
 						Email<br>
-						<input type="email" name="em" id = "email" placeholder="bob@gmail.com" required style=" min-width:300px; max-width:100%;height:100%;width:100%;">
+						<input type="email" name="em" id = "email" placeholder="bob@gmail.com" required style=" min-width:250px; max-width:100%;height:100%;width:100%;">
 					</label>
 					<br>
-
-
-
 					<br>
 					<input type="submit" value="Get my Coupon" id="gmcbutton">
 
