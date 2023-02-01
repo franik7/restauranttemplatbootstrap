@@ -73,12 +73,7 @@
 	<!-- Carousel -->
 
 	<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-		<div class="carousel-indicators">
-			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-		</div>
+
 		<div class="carousel-inner">
 			<div class="carousel-item active">
 				<img src="img/carousel/beefandbroccolicar.jpg" class="d-block w-100" alt="...">
@@ -111,7 +106,11 @@
 		<div class="row">
 			<div class="col-md-12 whitetext">
 
-				<h2 class="lunch">Hunan Village Restaurant</h2>
+				<!--				<h2 class="lunch">Hunan Village Restaurant</h2>-->
+
+				<h2 id="lunch">We are open for lunch!</h2>
+				<h2 id="open">We are currently open!</h2>
+				<h2 id="closed">We are currently closed, please visit us during our business hours</h2>
 
 				<p>Hunan Village offers delicious dining, takeout and delivery to New York. Hunan Village is a cornerstone in the New York community and has been recognized for its outstanding Chinese cuisine, excellent service and friendly staff</p>
 
@@ -131,66 +130,70 @@
 		<div class="row ">
 			<div class="row">
 				<div class="colmenu">
-					<h1> Dish of the Day at 20% off </h1>
+					<h1> Lunch Special for 2 </h1>
 
 					<br>
 				</div>
 			</div>
 
+			<section></section>
+
 			<div class="row ">
 
-				<div class="col fav HoverDiv dotd">
-					<img src="img/orangechicken.jpg" class="img-fluid ">
+				<div class="col fav HoverDiv dotd" id="deal">
+					<img class="modal-target" src="img/orangechicken.jpg" class="img-fluid" alt="Orange Chicken">
 					<h4> Orange Chicken </h4>
 
 				</div>
 
 
-				<div class="col fav HoverDiv dotd">
-					<img src="img/kungpaochicken.jpg" class="img-fluid">
+				<div class="col fav HoverDiv dotd" id="deal">
+					<img class="modal-target" src="img/kungpaochicken.jpg" class="img-fluid" alt="Kung Pao Chicken">
 					<h4> Kung Pao Chicken </h4>
 
 				</div>
 
-			</div>
 
 
 
-			<div class="row ">
-				<div class="col fav HoverDiv dotd">
-					<img src="img/veggielomein.jpg" class="img-fluid">
+
+
+				<div class="col fav HoverDiv dotd" id="deal">
+					<img class="modal-target" src="img/veggielomein.jpg" class="img-fluid" alt="Veggie Noodles">
 					<h4> Veggie Noodles </h4>
 				</div>
 
-
-
-
-				<div class="col fav HoverDiv dotd">
-					<img src="img/beefandbroccoli2.jpg" class="img-fluid">
-					<h4> Beef and Broccoli </h4>
-
-				</div>
 			</div>
 			<div class="row ">
 
-				<div class="col fav HoverDiv dotd">
-					<img src="img/wonton-soup.jpg" class="img-fluid">
+				<div class="col fav HoverDiv dotd" id="deal">
+					<img class="modal-target" src="img/beefandbroccoli2.jpg" class="img-fluid" alt="Beef and Broccoli">
+					<h4> Beef and Broccoli </h4>
+
+				</div>
+
+
+
+				<div class="col fav HoverDiv dotd" id="deal">
+					<img class="modal-target" src="img/wonton-soup.jpg" class="img-fluid" alt="Wonton Soup">
 					<h4> Wonton Soup </h4>
 
 				</div>
 
-				<div class="col fav HoverDiv dotd">
-					<img src="img/crabrangoon.jpg" class="img-fluid">
+				<div class="col fav HoverDiv dotd" id="deal">
+					<img class="modal-target" src="img/crabrangoon.jpg" class="img-fluid" alt="Crab Rangoon">
 					<h4> Crab Rangoon </h4>
 				</div>
 			</div>
-
-
-
-
-
-
 		</div>
+
+<!-- The Modal -->
+<div id="modal" class="modal">
+  <span id="modal-close" class="modal-close">&times;</span>
+  <img id="modal-content" class="modal-content">
+  <div id="modal-caption" class="modal-caption"></div>
+</div>
+
 
 	</section>
 	<!--Order Now-->
@@ -256,17 +259,17 @@
 
 
 
-				<p>Please fill out the form below to receive a 10% off your next order</p>
+				<p>Fill out the form below to receive a 10% off your next order</p>
 
-				<form>
+				<form action="dh.php" method="post">
 					<label>
 						Name<br>
-						<input type="text" name="nm" id = "name1" placeholder="Bob Garcia" required style=" min-width:250px; max-width:100%;height:100%;width:100%;">
+						<input type="text" name="nm" id="name1" placeholder="Bob Garcia" required style=" min-width:250px; max-width:100%;height:100%;width:100%;">
 					</label>
 					<br>
 					<label>
 						Email<br>
-						<input type="email" name="em" id = "email2" placeholder="bob@gmail.com" required style=" min-width:250px; max-width:100%;height:100%;width:100%;">
+						<input type="email" name="em" id="email2" placeholder="bob@gmail.com" required style=" min-width:250px; max-width:100%;height:100%;width:100%;">
 					</label>
 					<br>
 					<br>
@@ -280,24 +283,58 @@
 		</div>
 	</section>
 
-<script>
+	<script>
+		document.querySelector('#gmcbutton').addEventListener('click', capture)
 
-document.querySelector('#gmcbutton').addEventListener('click', capture)
-
-function capture() {
-  const name = document.querySelector('#name1').value
-  const email = document.querySelector('#email2').value
-  rand = Math.random()*100
-  let alertmessage = "Dear " + name + ", thank you for providing your email address " + email + ", your 10% discount coupon is " + Math.round(Math.random()*1000000);
-  alert(alertmessage);
-}
-
-
-</script>
+		function capture() {
+			const name = document.querySelector('#name1').value
+			const email = document.querySelector('#email2').value
+			rand = Math.random() * 100
+			let alertmessage = "Dear " + name + ", thank you for providing your email address " + email + ", your 10% discount coupon is FREE10. Please mention it to your server or use online";
+			alert(alertmessage);
+		}
+	</script>
 
 
+	<script>
+		const date = new Date();
+		let timenow = date.getHours();
+
+		console.log(timenow);
+
+		if (timenow >= 11 && timenow < 15) {
+			document.getElementById("open").style.display = 'none';
+			document.getElementById("closed").style.display = 'none';
+		} else if (timenow >= 15 && timenow < 23) {
+			document.getElementById("lunch").style.display = 'none';
+			document.getElementById("closed").style.display = 'none';
+		} else {
+			document.getElementById("lunch").style.display = 'none';
+			document.getElementById("open").style.display = 'none';
+		}
+	</script>
 
 
-</body>
+	<script>
+		// Modal Setup
+		var modal = document.getElementById('modal');
 
-</html>
+		var modalClose = document.getElementById('modal-close');
+		modalClose.addEventListener('click', function() {
+			modal.style.display = "none";
+		});
+
+		// global handler
+		document.addEventListener('click', function(e) {
+			if (e.target.className.indexOf('modal-target') !== -1) {
+				var img = e.target;
+				var modalImg = document.getElementById("modal-content");
+				var captionText = document.getElementById("modal-caption");
+				modal.style.display = "block";
+				modalImg.src = img.src;
+				captionText.innerHTML = img.alt;
+			}
+		});
+	</script>>
+
+</body></html>
