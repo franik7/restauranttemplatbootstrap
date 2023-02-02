@@ -136,7 +136,7 @@ p {
 	display: block;
 	width: 50%;
 	opacity: 1 !important;
-	max-width: 1200px;
+	max-width: 80%;
 }
 
 /* Caption of Modal Image */
@@ -203,4 +203,13 @@ p {
 	.dotd {
 		display: block;
 	}
+
+	.dotd img{
+		width: 250px;
+	}
+
+	.orderbuttonbackground img {
+		width:80%;
+	}
+}
 }
