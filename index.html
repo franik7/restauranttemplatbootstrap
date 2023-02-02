@@ -1,11 +1,11 @@
 <!--
 
 jquery for button modal pop up!
-make sure break point at 600 pixels displays pictures one by one
-adreess + phone = one line
-google address zoomed in
+
+
+
 button design bootstrap
-put everything in section with a div of container as it maxes the width at 1200px
+
 -->
 
 <!doctype html>
@@ -27,6 +27,8 @@ put everything in section with a div of container as it maxes the width at 1200p
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -156,12 +158,12 @@ put everything in section with a div of container as it maxes the width at 1200p
 				</div>
 
 
-				<div class="col-md-4 HoverDiv dotd" >
+				<div class="col-md-4 HoverDiv dotd">
 					<img class="modal-target" src="img/kungpaochicken.jpg" class="img-fluid" alt="Kung Pao Chicken">
 					<h4> Kung Pao Chicken </h4>
 				</div>
 
-				<div class="col-md-4 HoverDiv dotd" >
+				<div class="col-md-4 HoverDiv dotd">
 					<img class="modal-target" src="img/veggielomein.jpg" class="img-fluid" alt="Veggie Noodles">
 					<h4> Veggie Noodles </h4>
 				</div>
@@ -190,12 +192,12 @@ put everything in section with a div of container as it maxes the width at 1200p
 			</div>
 		</div>
 
-<!-- The Modal -->
-<div id="modal" class="modal">
-  <span id="modal-close" class="modal-close">&times;</span>
-  <img id="modal-content" class="modal-content">
-  <div id="modal-caption" class="modal-caption"></div>
-</div>
+		<!-- The Modal -->
+		<div id="modal" class="modal">
+			<span id="modal-close" class="modal-close">&times;</span>
+			<img id="modal-content" class="modal-content">
+			<div id="modal-caption" class="modal-caption"></div>
+		</div>
 
 
 	</section>
@@ -234,13 +236,13 @@ put everything in section with a div of container as it maxes the width at 1200p
 			<div class="row">
 				<div class="colmenu">
 					<a name="loc" id="loc">
-						<h1> Location </h1>
+						<h1> Where We Are </h1>
 					</a>
 
 				</div>
 			</div>
 			<div class="row">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387845.7709461851!2d-74.21936365270773!3d40.58476022051265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25903fd917a3b%3A0xd0df156b3af45712!2sHunan%20Manor!5e0!3m2!1sen!2sus!4v1673833323935!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.562779037698!2d-73.97924578394175!3d40.74964524324735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25903fd917a3b%3A0xd0df156b3af45712!2sHunan%20Village!5e0!3m2!1sen!2sus!4v1675350690761!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
 		</div>
 	</section>
@@ -250,6 +252,7 @@ put everything in section with a div of container as it maxes the width at 1200p
 
 	<!--Contact-->
 
+
 	<section class="fluid-container bg-danger p-5">
 		<div class="container"></div>
 		<div class="row">
@@ -257,11 +260,11 @@ put everything in section with a div of container as it maxes the width at 1200p
 				<a name="contactus" id="contactus">
 					<h1> Contact Info </h1>
 				</a>
-				<p>123 Main St, New York, NY 11230 &#x2022; 646-123-5356 &#x2022; 7 days a week &#x2022; 11:30AM - 10PM</p>
+				<p>339 Lexington Ave, New York, NY 10016 &#x2022; 646-123-5356 &#x2022; 7 days a week &#x2022; 11:30AM - 10PM</p>
 
 
 
-				<p>Fill out the form below to receive a 10% off your next order</p>
+				<p>Fill out the form below to receive a 10% off your next order (code arrives on email)</p>
 
 				<form action="dh.php" method="post">
 					<label>
@@ -275,7 +278,7 @@ put everything in section with a div of container as it maxes the width at 1200p
 					</label>
 					<br>
 					<br>
-					<input type="submit" value="Get my Coupon" id="gmcbutton">
+					<input type="submit" value="Get my Coupon" id="gmcbutton" class="btn" disabled>
 
 				</form>
 
@@ -285,8 +288,18 @@ put everything in section with a div of container as it maxes the width at 1200p
 		</div>
 	</section>
 
+
 	<script>
-		document.querySelector('#gmcbutton').addEventListener('click', capture)
+
+		$("input[type='text'], input[type='email']").on("keyup", function() {
+			if ($("#nam1").val() != "" && ($("#email2").val().indexOf('@') != -1) && ($("#email2").val().indexOf('.') != -1)  )  {
+				$("input[type='submit']").removeAttr("disabled");
+			}
+		});
+
+	</script>
+	<script>
+		document.querySelector('.btn').addEventListener('click', capture)
 
 		function capture() {
 			const name = document.querySelector('#name1').value
@@ -295,6 +308,7 @@ put everything in section with a div of container as it maxes the width at 1200p
 			let alertmessage = "Dear " + name + ", thank you for providing your email address " + email + ", your 10% discount coupon is FREE10. Please mention it to your server or use online";
 			alert(alertmessage);
 		}
+
 	</script>
 
 
@@ -314,6 +328,7 @@ put everything in section with a div of container as it maxes the width at 1200p
 			document.getElementById("lunch").style.display = 'none';
 			document.getElementById("open").style.display = 'none';
 		}
+
 	</script>
 
 
@@ -337,6 +352,9 @@ put everything in section with a div of container as it maxes the width at 1200p
 				captionText.innerHTML = img.alt;
 			}
 		});
+
 	</script>
 
-</body></html>
+</body>
+
+</html>

@@ -199,18 +199,32 @@ p {
 	cursor: pointer;
 }
 
-@media screen and (max-width: 600px) {
+.btn {
+	color: #000;
+	background: #ffc107;
+
+}
+
+.btn:hover {
+	color: #000;
+	background: #ffc107;
+	opacity: 100%;
+	transform: scale(1.1);
+}
+
+
+@media screen and (max-width: 800px) {
 	.dotd {
 		display: block;
 	}
 
 	.dotd img{
-		width: 100%;
+		width: 70%;
 
 	}
 
 	.orderbuttonbackground img {
-		width:80%;
+		width:50%;
 	}
 }
 }

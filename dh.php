@@ -7,7 +7,6 @@ $d = json_encode($d);
 
 
 
-
 file_put_contents('data.json', $d);
 
 
