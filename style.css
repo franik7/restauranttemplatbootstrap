@@ -92,6 +92,9 @@ p {
 	display:none;
 }
 */
+
+
+
 .modal-target {
 	width: 300px;
 	border-radius: 5px;
@@ -194,4 +197,10 @@ p {
 	color: #bbb;
 	text-decoration: none;
 	cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+	.dotd {
+		display: block;
+	}
 }
